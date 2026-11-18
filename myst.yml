@@ -1,0 +1,36 @@
+version: 1
+project:
+  title: Genealogy Educational Resources
+  authors:
+    - name: Kurt Krueckeberg
+  copyright: '2026'
+  github: kurt-krueckeberg/jb2-edu
+  plugins:
+    - flat-table.mjs
+    - link-images.mjs
+  exclude:
+    - todo.md
+  exports:
+    - format: typst
+      template: plain_typst_book
+      output: exports/book.pdf
+      id: book-pdf
+  toc:
+    - file: root/index.md
+    - title: German Genealogy Research
+      children:
+        - file: german-research/intro.md
+    - title: Video Lectures
+      children:
+        - file: videos/familysearch-videos.md
+        - file: videos/ggs-videos.md
+        - file: videos/german-gen-collective.md
+        - file: videos/ftw-videos.md
+    - title: Articles on the BCG Standards
+      children:
+        - file: standards/standard-35.md
+site:
+  options:
+    folders: true
+    style: _static/overrides.css
+  template: book-theme
